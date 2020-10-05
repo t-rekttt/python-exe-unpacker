@@ -160,7 +160,7 @@ class PyInstaller(PythonExectable):
             copyfile(encrypted_key_path, encrypted_key_path_pyc)
             if os.path.exists(encrypted_key_path_pyc):
                 encrypted_key_path_py = encrypted_key_path + ".py"
-                (total, okay, failed, verify_failed) = PythonExectable.decompile_pyc(None, [encrypted_key_path_pyc], encrypted_key_path_py)
+                (total, okay, failed, verify_failed) = PythonExectable.decompile_pyc('', [encrypted_key_path_pyc], encrypted_key_path_py)
                 if failed == 0 and verify_failed == 0:
                     from configparser import ConfigParser
                     from io import StringIO
